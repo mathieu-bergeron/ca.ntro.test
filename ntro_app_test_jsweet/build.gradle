@@ -1,0 +1,25 @@
+plugins {
+    id 'localJavaPlugin'
+    id 'localJSweetPlugin'
+}
+
+project.group = 'ca.ntro'
+project.version = '0.1'
+
+dependencies {
+/*
+
+    implementation project(':ntro_app')
+    implementation group: 'ca.ntro', name: 'ntro_app', version: '0.1'
+
+    implementation project(':ntro_jsweet')
+    implementation group: 'ca.ntro', name: 'ntro_jsweet', version: '0.1'
+
+    implementation project(':ntro_app_test')
+    implementation group: 'ca.ntro', name: 'ntro_app_test', version: '0.1'
+
+	// XXX: must be 'compile' and not 'implementation'
+    compile group: 'org.jsweet.candies.ext', name: 'jquery', version: "1.10.0-SNAPSHOT"
+    */
+}
+

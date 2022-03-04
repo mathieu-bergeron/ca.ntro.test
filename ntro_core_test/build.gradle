@@ -1,0 +1,31 @@
+plugins {
+    id 'localJavaPlugin'
+    id 'localJSweetPlugin'
+}
+
+project.group = 'ca.ntro'
+project.version = '0.1'
+
+localJSweetPlugin {
+
+    localJSweetDependencies = ['ntro_core']
+
+}
+
+tasks.test{
+    afterTest { desc, result -> 
+        logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+    }
+}
+
+
+dependencies {
+
+    implementation project(':ntro_core')
+
+    // not testImplementation 
+    // tests need to be with main code
+    // for JSweet version
+    implementation 'junit:junit:4.13'
+}
+

@@ -1,0 +1,31 @@
+plugins {
+    id 'localJavaPlugin'
+    id 'localJSweetPlugin'
+}
+
+project.group = 'ca.ntro'
+project.version = '0.1'
+
+
+dependencies {
+    implementation project(':ntro_core')
+    implementation project(':ntro_core_jdk')
+
+    implementation project(':ntro_app')
+    implementation project(':ntro_app_jdk')
+    implementation project(':ntro_app_fx')
+
+    testImplementation project(':ntro_app_test')
+    testImplementation project(':ntro_app_test_jdk')
+
+    implementation 'junit:junit:4.13'
+}
+
+configurations{
+    // XXX: not needed in runtime 
+    //      and conflicts with selenium and gson
+    testRuntime.exclude group: 'org.jsweet'
+    runtime.exclude group: 'org.jsweet' 
+}
+
+

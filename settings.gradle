@@ -1,0 +1,81 @@
+rootProject.name = '_test'
+
+include '_drafting_one'
+include '_drafting_two'
+include '_drafting_three'
+
+include '_demo_core'
+include '_demo_core_jsweet'
+include '_demo_core_jdk'
+
+include 'ntro_core'
+include 'ntro_core_jdk'
+include 'ntro_core_fx'
+include 'ntro_core_jsweet'
+
+project(':ntro_core').projectDir = new File('../ntro/ntro_core')
+project(':ntro_core_jdk').projectDir = new File('../ntro/ntro_core_jdk')
+project(':ntro_core_fx').projectDir = new File('../ntro/ntro_core_fx')
+project(':ntro_core_jsweet').projectDir = new File('../ntro/ntro_core_jsweet')
+
+include 'ntro_core_test'
+include 'ntro_core_test_jdk'
+include 'ntro_core_test_fx'
+include 'ntro_core_test_jsweet'
+
+include 'ntro_app'
+include 'ntro_app_jdk'
+include 'ntro_app_fx'
+include 'ntro_app_jsweet'
+
+project(':ntro_app').projectDir = new File('../ntro/ntro_app')
+project(':ntro_app_jdk').projectDir = new File('../ntro/ntro_app_jdk')
+project(':ntro_app_fx').projectDir = new File('../ntro/ntro_app_fx')
+project(':ntro_app_jsweet').projectDir = new File('../ntro/ntro_app_jsweet')
+
+include 'ntro_web'
+include 'ntro_web_jdk'
+include 'ntro_web_jsweet'
+
+project(':ntro_web').projectDir = new File('../ntro/ntro_web')
+project(':ntro_web_jdk').projectDir = new File('../ntro/ntro_web_jdk')
+project(':ntro_web_jsweet').projectDir = new File('../ntro/ntro_web_jsweet')
+
+include 'ntro_server'
+include 'ntro_server_jdk'
+
+project(':ntro_server').projectDir = new File('../ntro/ntro_server')
+project(':ntro_server_jdk').projectDir = new File('../ntro/ntro_server_jdk')
+
+include 'ntro_app_test'
+include 'ntro_app_test_jdk'
+include 'ntro_app_test_fx'
+include 'ntro_app_test_jsweet'
+
+include 'aiguilleur_4f5'
+
+include 'aiguilleur_core'
+include 'aiguilleur_jsweet'
+include 'aiguilleur_fx'
+include 'aiguilleur_server'
+include 'aiguilleur_monolithic'
+
+buildscript {
+    repositories {
+	    mavenCentral()
+	    maven { url "http://repository.jsweet.org/artifactory/libs-release-local" }
+	    maven { url "http://repository.jsweet.org/artifactory/libs-snapshot-local" }
+	    maven { url "http://repository.jsweet.org/artifactory/plugins-release-local" }
+	    maven { url "http://repository.jsweet.org/artifactory/plugins-snapshot-local" }
+	    maven { url "http://google-diff-match-patch.googlecode.com/svn/trunk/maven" }
+	    maven {url "https://plugins.gradle.org/m2/"}
+    }
+
+    dependencies {
+	    classpath('org.jsweet:jsweet-gradle-plugin:3.1.0') { 
+		    transitive = true 
+	    }
+
+        classpath 'org.openjfx:javafx-plugin:0.0.10'
+    }
+}

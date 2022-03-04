@@ -1,0 +1,20 @@
+plugins{
+    id 'localJavaPlugin'
+    id 'localJSweetPlugin'
+}
+
+project.group = "ca.ntro"
+project.version = "0.1"
+
+localJSweetPlugin {
+
+    localJSweetDependencies = [
+            'ntro_core', 
+            'ntro_core_jsweet', 
+            '_demo_core'
+       ]
+}
+
+task js {
+    dependsOn ':aiguilleur_jsweet:jsweet'
+}
