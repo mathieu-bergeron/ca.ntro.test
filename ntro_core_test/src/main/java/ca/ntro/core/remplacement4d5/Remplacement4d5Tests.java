@@ -36,27 +36,27 @@ public class Remplacement4d5Tests extends NtroTests {
 		
 		ListeProduits liste = new ListeProduits(10);
 
-		ObjectGraph graph = Ntro.reflection().graphFromObject(liste, "ListeProduit00");
+		ObjectGraph graph = Ntro.reflection().graphFromObject(liste, "ListeProduits00");
 		graph.write(Ntro.graphWriter());
 		
 		liste.ajouter(prod1);
 
-		graph = Ntro.reflection().graphFromObject(liste, "ListeProduit01");
+		graph = Ntro.reflection().graphFromObject(liste, "ListeProduits01");
 		graph.write(Ntro.graphWriter());
 
 		liste.ajouter(prod2);
 
-		graph = Ntro.reflection().graphFromObject(liste, "ListeProduit02");
+		graph = Ntro.reflection().graphFromObject(liste, "ListeProduits02");
 		graph.write(Ntro.graphWriter());
 
 		liste.ajouter(prod3);
 
-		graph = Ntro.reflection().graphFromObject(liste, "ListeProduit03");
+		graph = Ntro.reflection().graphFromObject(liste, "ListeProduits03");
 		graph.write(Ntro.graphWriter());
 
 		liste.supprimer(100);
 
-		graph = Ntro.reflection().graphFromObject(liste, "ListeProduit04");
+		graph = Ntro.reflection().graphFromObject(liste, "ListeProduits04");
 		graph.write(Ntro.graphWriter());
 
 	}
