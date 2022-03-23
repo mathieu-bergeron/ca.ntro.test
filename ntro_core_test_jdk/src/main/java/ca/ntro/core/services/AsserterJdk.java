@@ -34,7 +34,7 @@ public class AsserterJdk implements Asserter {
 
 	@Override
 	public void assertFuture(long maxDelay, Runnable runnable) {
-		long start = Ntro.time().nowMillis();
+		long start = Ntro.time().nowMilliseconds();
 
 		runnable.run();
 
@@ -44,7 +44,7 @@ public class AsserterJdk implements Asserter {
 			
 			Ntro.time().sleep(500);
 
-			delay = Ntro.time().nowMillis() - start;
+			delay = Ntro.time().nowMilliseconds() - start;
 		}
 	}
 
